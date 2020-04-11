@@ -5,6 +5,7 @@
 2.安装 gorm 
    go get -u github.com/go-sql-driver/mysql
    go get -u github.com/jinzhu/gorm
+   
 3. 关于gorm无法兼容pb文件未进行处理而是用gorm的原生语句进行了数据库的读写
    如果对接收的数据结构体进行重构,有点繁琐
 
