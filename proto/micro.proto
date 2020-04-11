@@ -1,0 +1,70 @@
+syntax  = "proto3";
+import public "google/protobuf/timestamp.proto";
+package  proto;
+
+//产品接口
+service ProductService{
+    rpc GetProductById(SbyId)       returns (Response);
+    rpc GetAllProduct(SAll)         returns (Response);
+    rpc InsertOneProduct(IPOne)   returns(ReSimp);
+    rpc InsertManyProduct(IPMany)  returns(ReSimp);
+}
+
+//产品表
+message Product{
+    int32 id=1;
+    string productName=2;
+    string manual=3;
+    int32 state=4;
+    int32 siteId=5;
+    string areas=6;
+    string address=7;
+    string content=8;
+    int32  adminuserId=9;
+    int32 sorts=10;
+    string  created=11;
+    repeated ProductInfo PInfo=20;
+}
+
+//详情表
+message ProductInfo{
+
+    int32 id=1;
+    int32 productId=2;
+    string shopname=3;
+    string img=4;
+}
+
+//查询一条
+message SbyId{
+    int32 id=1;
+}
+
+//查询所有
+message SAll{
+  int32 page=1;
+  int32 limit=2;
+}
+
+//插入单条
+message IPOne{
+    Product pro=1;
+}
+
+//插入多条
+message IPMany{
+    repeated Product pro=1;
+}
+
+//返回结果
+message Response{
+    int32 code=1;
+    repeated Product pro=2;
+    string Msg =3;
+}
+
+//返回空数据
+message ReSimp{
+    int32 code=1;
+    string msg=2;
+}

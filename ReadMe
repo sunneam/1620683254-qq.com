@@ -1,0 +1,30 @@
+cd 项目目录/GRpc/proto
+
+//运行
+protoc --go_out=plugins=grpc:. micro.proto
+
+传入的json数组
+[
+    {
+    "productName":"保温杯",
+    "manual":"www.hh.com",
+    "state":0,
+    "siteId":1,
+    "areas":"us",
+    "address":"美国",
+    "content":"该产品已在美国进行热售",
+    "adminuserId":10,
+    "sorts":1
+    },
+    {
+    "productName":"牛奶",
+    "manual":"www.hh.com",
+    "state":0,
+    "siteId":1,
+    "areas":"us",
+    "address":"美国",
+    "content":"该产品已在美国进行热售",
+    "adminuserId":10,
+    "sorts":1
+    }
+]
